@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-::root {
+:root {
   --primary-color: #a256de;
   --secondary-color: #f7acac;
   --light-gray: #bdbdbd;
