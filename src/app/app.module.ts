@@ -9,6 +9,7 @@ import { RoomListComponent } from './room-list/room-list.component';
 import { RoomCreateComponent } from './room-create/room-create.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
 import { RoomUpdateComponent } from './room-update/room-update.component';
+import { RoomCardComponent } from './shared/component/room-card/room-card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { RoomUpdateComponent } from './room-update/room-update.component';
     RoomCreateComponent,
     RoomDetailsComponent,
     RoomUpdateComponent,
+    RoomCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [RoomService],
