@@ -1,8 +1,9 @@
 <h2>Lista de Salas disponíveis</h2>
 
-<div class="results">
-  <app-room-card
-    *ngFor="let room of roomList"
-    [roomBeingShown]="room"
-  ></app-room-card>
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let room of roomList">
+      <app-room-card [roomBeingShown]="room"></app-room-card>
+    </div>
+  </div>
 </div>
