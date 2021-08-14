@@ -10,6 +10,8 @@ import { RoomCreateComponent } from './room-create/room-create.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
 import { RoomUpdateComponent } from './room-update/room-update.component';
 import { RoomCardComponent } from './shared/component/room-card/room-card.component';
+import { HeaderComponent } from './shared/component/header/header.component';
+import { FooterComponent } from './shared/component/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { RoomCardComponent } from './shared/component/room-card/room-card.compon
     RoomDetailsComponent,
     RoomUpdateComponent,
     RoomCardComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [RoomService],
