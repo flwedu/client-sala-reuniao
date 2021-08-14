@@ -13,6 +13,7 @@ import { RoomUpdateComponent } from './room-update/room-update.component';
 import { RoomCardComponent } from './shared/component/room-card/room-card.component';
 import { HeaderComponent } from './shared/component/header/header.component';
 import { FooterComponent } from './shared/component/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,13 @@ import { FooterComponent } from './shared/component/footer/footer.component';
     HeaderComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatIconModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatIconModule,
+    FormsModule,
+  ],
   providers: [RoomService],
   bootstrap: [AppComponent],
 })
