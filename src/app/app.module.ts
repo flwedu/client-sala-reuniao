@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 import { RoomService } from './core/service/room.service';
 import { RoomListComponent } from './room-list/room-list.component';
 import { RoomCreateComponent } from './room-create/room-create.component';
@@ -24,7 +25,7 @@ import { FooterComponent } from './shared/component/footer/footer.component';
     HeaderComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, MatIconModule],
   providers: [RoomService],
   bootstrap: [AppComponent],
 })
