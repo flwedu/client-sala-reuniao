@@ -25,8 +25,8 @@ export class RoomCreateComponent implements OnInit {
 
   saveRoom() {
     this.roomService.save(this.room).subscribe({
-      next: (savedRoom) => {
-        alert(`Sala ${savedRoom.id} criada com sucesso`);
+      next: () => {
+        this.submitted = true;
       },
       error: (err) => {
         alert('Houve um erro ao tentar salvar a sala');
@@ -37,7 +37,6 @@ export class RoomCreateComponent implements OnInit {
 
   onSubmit() {
     this.saveRoom();
-    this.submitted = true;
   }
 
   gotoListPage() {
