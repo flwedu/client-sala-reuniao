@@ -1,1 +1,8 @@
-<p>room-list works!</p>
+<h2>Lista de Salas disponíveis</h2>
+
+<div class="results">
+  <app-room-card
+    *ngFor="let room of roomList"
+    [roomBeingShown]="room"
+  ></app-room-card>
+</div>
