@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RoomService } from '../core/service/room.service';
 import { Room } from '../shared/model/room';
 
@@ -11,21 +11,16 @@ import { Room } from '../shared/model/room';
 export class RoomListComponent implements OnInit {
   roomList: Room[] = [];
 
-  constructor(
-    private roomService: RoomService,
-    private routes: ActivatedRoute
-  ) {}
+  constructor(private roomService: RoomService, private router: Router) {}
 
   ngOnInit(): void {
     this.reloadData();
   }
 
   reloadData() {
-    this.roomService
-      .listAll()
-      .subscribe({
-        next: (results) => (this.roomList = [...results]),
-        error: (err) => console.error(err),
-      });
+    this.roomService.listAll().subscribe({
+      next: (results) => (this.roomList = [...results]),
+      error: (err) => console.error(err),
+    });
   }
 }
