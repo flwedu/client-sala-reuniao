@@ -16,7 +16,7 @@ export class RoomService {
   }
 
   findById(id: number): Observable<Room> {
-    return this.httpClient.get<Room>(this.baseURL + id);
+    return this.httpClient.get<Room>(this.baseURL + '/' + id);
   }
 
   save(room: Room): Observable<Room> {
@@ -24,10 +24,10 @@ export class RoomService {
   }
 
   update(id: number, room: Room): Observable<Room> {
-    return this.httpClient.put<Room>(this.baseURL + id, room);
+    return this.httpClient.put<Room>(this.baseURL + '/' + id, room);
   }
 
   deleteById(id: number): Observable<Room> {
-    return this.httpClient.delete<Room>(this.baseURL + id);
+    return this.httpClient.delete<Room>(this.baseURL + '/' + id);
   }
 }
