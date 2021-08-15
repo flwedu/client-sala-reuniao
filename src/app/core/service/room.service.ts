@@ -27,7 +27,7 @@ export class RoomService {
     return this.httpClient.put<Room>(this.baseURL + '/' + id, room);
   }
 
-  deleteById(id: number): Observable<Room> {
-    return this.httpClient.delete<Room>(this.baseURL + '/' + id);
+  deleteById(id: number): Observable<any> {
+    return this.httpClient.delete<any>(this.baseURL + '/' + id);
   }
 }
