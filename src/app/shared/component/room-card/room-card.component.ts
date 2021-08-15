@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoomService } from 'src/app/core/service/room.service';
 import { Room } from '../../model/room';
@@ -9,8 +9,9 @@ import { Room } from '../../model/room';
   styleUrls: ['./room-card.component.css'],
 })
 export class RoomCardComponent implements OnInit {
-  @Input()
-  roomBeingShown!: Room;
+  @Input() roomBeingShown!: Room;
+
+  @Output() deleteComponent = new EventEmitter<Room>();
 
   constructor(private router: Router, private roomService: RoomService) {}
 
@@ -24,12 +25,7 @@ export class RoomCardComponent implements OnInit {
     this.router.navigate(['update', id]);
   }
 
-  deleteRoomById(id: number) {
-    this.roomService.deleteById(id).subscribe({
-      next: (deletedRoom) => {
-        alert(`Room ${deletedRoom.id} deleted!!`);
-      },
-      error: (err) => console.log(err),
-    });
+  deleteRoomById(id: any) {
+    this.deleteComponent.emit();
   }
 }
