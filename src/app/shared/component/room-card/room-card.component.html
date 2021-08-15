@@ -5,6 +5,17 @@
     <p class="card-text">Date: {{ roomBeingShown.date }}</p>
     <p class="card-text">Start Hour: {{ roomBeingShown.startHour }}</p>
     <p class="card-text">End Hour: {{ roomBeingShown.endHour }}</p>
-    <a href="#" class="btn btn-primary">Show Details</a>
+    <button
+      (click)="goToRoomDetails(roomBeingShown.id || 0)"
+      class="btn btn-primary"
+    >
+      Show Details
+    </button>
+    <button
+      (click)="goToRoomUpdate(roomBeingShown.id || 0)"
+      class="btn btn-primary"
+    >
+      Update
+    </button>
   </div>
 </div>
