@@ -1,0 +1,18 @@
+.card-body {
+  display: flexbox;
+  justify-content: center;
+}
+
+.header-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons * {
+  margin: 0.5rem 1rem;
+}

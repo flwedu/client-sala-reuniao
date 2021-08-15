@@ -1,21 +1,38 @@
 <div class="card" style="width: 18rem">
-  <img src="..." class="card-img-top" alt="..." />
+  <div class="header-icon">
+    <mat-icon class="material-icons-outlined" *ngIf="roomBeingShown.isActive">
+      meeting_room
+    </mat-icon>
+    <mat-icon class="material-icons-outlined" *ngIf="!roomBeingShown.isActive">
+      no_meeting_room
+    </mat-icon>
+  </div>
   <div class="card-body">
     <h5 class="card-title">{{ roomBeingShown.name }}</h5>
     <p class="card-text">Date: {{ roomBeingShown.date }}</p>
     <p class="card-text">Start Hour: {{ roomBeingShown.startHour }}</p>
     <p class="card-text">End Hour: {{ roomBeingShown.endHour }}</p>
-    <button
-      (click)="goToRoomDetails(roomBeingShown.id || 0)"
-      class="btn btn-primary"
-    >
-      Show Details
-    </button>
-    <button
-      (click)="goToRoomUpdate(roomBeingShown.id || 0)"
-      class="btn btn-primary"
-    >
-      Update
-    </button>
+    <div class="buttons">
+      <button
+        (click)="goToRoomDetails(roomBeingShown.id || 0)"
+        class="btn btn-outline-primary"
+      >
+        Show Details
+      </button>
+    </div>
+    <div class="buttons">
+      <button
+        (click)="goToRoomUpdate(roomBeingShown.id || 0)"
+        class="btn btn-outline-warning"
+      >
+        Update
+      </button>
+      <button
+        (click)="deleteRoomById(roomBeingShown.id || 0)"
+        class="btn btn-outline-danger"
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </div>
