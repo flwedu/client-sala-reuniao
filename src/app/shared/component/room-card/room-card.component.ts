@@ -17,11 +17,11 @@ export class RoomCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  goToRoomDetails(id: number) {
+  goToRoomDetails(id: any) {
     this.router.navigate(['details', id]);
   }
 
-  goToRoomUpdate(id: number) {
+  goToRoomUpdate(id: any) {
     this.router.navigate(['update', id]);
   }
 
