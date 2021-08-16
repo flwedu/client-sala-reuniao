@@ -7,3 +7,18 @@
   --light-gray: #bdbdbd;
   --dark-gray: #333333;
 }
+
+section {
+  width: 25rem;
+  margin: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons * {
+  width: 20rem;
+  margin: 1rem auto;
+}
