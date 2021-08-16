@@ -1,0 +1,13 @@
+section {
+  width: 25rem;
+  margin: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons * {
+  margin-top: 1rem;
+}
