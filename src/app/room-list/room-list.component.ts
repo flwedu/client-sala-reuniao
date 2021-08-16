@@ -25,7 +25,7 @@ export class RoomListComponent implements OnInit {
   handleDeleteRoom(id: any) {
     this.roomService.deleteById(id).subscribe({
       next: () => {
-        alert('Room deleted');
+        alert(`Room nº ${id} deleted`);
         this.reloadData();
       },
       error: (error) => console.log(error),
