@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { RoomService } from '../core/service/room.service';
 import { Room } from '../shared/model/room';
 
