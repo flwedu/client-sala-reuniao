@@ -20,7 +20,7 @@ a {
   padding: 0 1rem;
 }
 
-a :hover {
-  text-decoration: underline;
-  color: var(--light-gray);
+a:hover {
+  cursor: pointer;
+  color: var(--secondary-color);
 }

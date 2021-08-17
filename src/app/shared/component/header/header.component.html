@@ -3,6 +3,12 @@
     <span class="material-icons"> meeting_room </span> Gerenciador de salas de
     reunião
   </h1>
-  <a (click)="goToList()">List of Rooms</a>
-  <a (click)="goToCreate()">Create Room</a>
+  <ul class="nav nav-pills card-header-pills">
+    <li class="nav-item">
+      <a class="nav-link" (click)="goToList()">List of Rooms</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="goToCreate()">Create Room</a>
+    </li>
+  </ul>
 </div>
