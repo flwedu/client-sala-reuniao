@@ -1,33 +1,31 @@
-<div class="card" style="width: 18rem">
-  <div class="header-icon">
-    <mat-icon class="material-icons-outlined"> meeting_room </mat-icon>
+<div class="header-icon">
+  <mat-icon class="material-icons-outlined"> meeting_room </mat-icon>
+</div>
+<div class="card-body">
+  <h5 class="card-title">{{ roomBeingShown.name }}</h5>
+  <p class="card-text">Date: {{ roomBeingShown.date }}</p>
+  <p class="card-text">Start Hour: {{ roomBeingShown.startHour }}</p>
+  <p class="card-text">End Hour: {{ roomBeingShown.endHour }}</p>
+  <div class="buttons">
+    <button
+      (click)="goToRoomDetails(roomBeingShown.id)"
+      class="btn btn-outline-primary"
+    >
+      Show Details
+    </button>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">{{ roomBeingShown.name }}</h5>
-    <p class="card-text">Date: {{ roomBeingShown.date }}</p>
-    <p class="card-text">Start Hour: {{ roomBeingShown.startHour }}</p>
-    <p class="card-text">End Hour: {{ roomBeingShown.endHour }}</p>
-    <div class="buttons">
-      <button
-        (click)="goToRoomDetails(roomBeingShown.id)"
-        class="btn btn-outline-primary"
-      >
-        Show Details
-      </button>
-    </div>
-    <div class="buttons">
-      <button
-        (click)="goToRoomUpdate(roomBeingShown.id)"
-        class="btn btn-outline-warning"
-      >
-        Update
-      </button>
-      <button
-        (click)="deleteRoomById(roomBeingShown.id)"
-        class="btn btn-outline-danger"
-      >
-        Delete
-      </button>
-    </div>
+  <div class="buttons">
+    <button
+      (click)="goToRoomUpdate(roomBeingShown.id)"
+      class="btn btn-outline-warning"
+    >
+      Update
+    </button>
+    <button
+      (click)="deleteRoomById(roomBeingShown.id)"
+      class="btn btn-outline-danger"
+    >
+      Delete
+    </button>
   </div>
 </div>
