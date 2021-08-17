@@ -13,7 +13,8 @@ import { RoomUpdateComponent } from './room-update/room-update.component';
 import { RoomCardComponent } from './shared/component/room-card/room-card.component';
 import { HeaderComponent } from './shared/component/header/header.component';
 import { FooterComponent } from './shared/component/footer/footer.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormRoomComponent } from './shared/component/form-room/form-room.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import { FormsModule } from '@angular/forms';
     RoomCardComponent,
     HeaderComponent,
     FooterComponent,
+    FormRoomComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MatIconModule,
-    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [RoomService],
   bootstrap: [AppComponent],
