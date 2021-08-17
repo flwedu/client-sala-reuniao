@@ -9,43 +9,26 @@ import { Room } from '../shared/model/room';
   styleUrls: ['./room-update.component.css'],
 })
 export class RoomUpdateComponent implements OnInit {
-  room: Room = new Room();
   submitted = false;
+  idFromRouter: number;
 
   constructor(
     private roomService: RoomService,
     private router: Router,
     private activedRoute: ActivatedRoute
-  ) {}
-
-  ngOnInit(): void {
-    this.loadData(this.getIdFromRoute());
+  ) {
+    this.idFromRouter = this.activedRoute.snapshot.params['id'];
   }
 
-  onSubmit() {
-    this.updateRoom();
-  }
+  ngOnInit(): void {}
 
-  loadData(id: number) {
-    this.roomService.findById(id).subscribe({
-      next: (getRoom) => (this.room = getRoom),
+  updateRoom(roomToSave: Room) {
+    this.roomService.update(this.idFromRouter, roomToSave).subscribe({
+      next: () => (this.submitted = true),
       error: (err) => console.error(err),
     });
-  }
-
-  updateRoom() {
-    this.roomService
-      .update(this.getIdFromRoute(), this.room)
-      .subscribe({
-        next: () => (this.submitted = true),
-        error: (err) => console.error(err),
-      });
 
     this.goToList();
-  }
-
-  getIdFromRoute(): number {
-    return this.activedRoute.snapshot.params['id'];
   }
 
   goToList() {

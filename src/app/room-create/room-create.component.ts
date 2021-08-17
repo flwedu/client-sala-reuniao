@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RoomService } from '../core/service/room.service';
 import { Room } from '../shared/model/room';
@@ -9,7 +10,6 @@ import { Room } from '../shared/model/room';
   styleUrls: ['./room-create.component.css'],
 })
 export class RoomCreateComponent implements OnInit {
-  room = new Room();
   submitted = false;
 
   constructor(private roomService: RoomService, private router: Router) {}
@@ -19,12 +19,11 @@ export class RoomCreateComponent implements OnInit {
   }
 
   newRoom() {
-    this.room = new Room();
     this.submitted = false;
   }
 
-  saveRoom() {
-    this.roomService.save(this.room).subscribe({
+  saveRoom(room: Room) {
+    this.roomService.save(room).subscribe({
       next: () => {
         this.submitted = true;
       },
@@ -35,8 +34,8 @@ export class RoomCreateComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.saveRoom();
+  createNewRoom() {
+    return new Room();
   }
 
   gotoListPage() {
