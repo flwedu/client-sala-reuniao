@@ -32,3 +32,20 @@ Essa aplicação necessita da API de Salas de Reuniões, disponível em https://
 [ ✔ ] Apagar salas
 
 [ ✔ ] Atualizar dados de salas
+
+## Imagens da utilização da aplicação
+
+Criação de uma nova sala:
+
+![image](https://user-images.githubusercontent.com/55285816/129819706-f30b4427-933c-40aa-aec7-09a841976797.png)
+
+Visualizando detalhes de uma sala:
+
+![image](https://user-images.githubusercontent.com/55285816/129819427-8220273d-881b-4e0a-924f-ffb1846ac456.png)
+
+Lista de salas disponíveis:
+
+![image](https://user-images.githubusercontent.com/55285816/129819602-6ec45d25-8352-4649-9037-869c67f973ca.png)
+
+
+
