@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { RoomService } from 'src/app/core/service/room.service';
 import { Room } from '../../model/room';
 
@@ -16,14 +15,14 @@ export class FormRoomComponent implements OnInit {
 
   id: any;
   room: Room = new Room();
-  roomForm: FormGroup | any;
+  roomForm!: FormGroup;
   formReadyToShow = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private roomService: RoomService,
     private activedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.id = this.activedRoute.snapshot.params['id'] || -1;
@@ -48,12 +47,36 @@ export class FormRoomComponent implements OnInit {
     this.submitEventEmitter.emit(this.room);
   }
 
+  getFormControl(controlName: string) {
+    return this.roomForm.get(controlName);
+  }
+
   private createForm(room: Room) {
     this.roomForm = this.formBuilder.group({
-      name: [room.name],
-      date: [room.date],
-      startHour: [room.startHour],
-      endHour: [room.endHour],
+      name: [room.name, [Validators.required, Validators.minLength(2)]],
+      date: [
+        room.date,
+        [
+          Validators.required,
+          Validators.pattern(
+            '^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)d{4}$/i'
+          ),
+        ],
+      ],
+      startHour: [
+        room.startHour,
+        [
+          Validators.required,
+          Validators.pattern('/^([01]\d|2[0-3]):([0-5]\d)$/'),
+        ],
+      ],
+      endHour: [
+        room.endHour,
+        [
+          Validators.required,
+          Validators.pattern('/^([01]\d|2[0-3]):([0-5]\d)$/'),
+        ],
+      ],
       isActive: [room.isActive],
     });
   }

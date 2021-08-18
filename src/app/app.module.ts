@@ -15,6 +15,7 @@ import { HeaderComponent } from './shared/component/header/header.component';
 import { FooterComponent } from './shared/component/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormRoomComponent } from './shared/component/form-room/form-room.component';
+import { FormRoomErrorMessageComponent } from './shared/component/form-room-error-message/form-room-error-message.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormRoomComponent } from './shared/component/form-room/form-room.compon
     HeaderComponent,
     FooterComponent,
     FormRoomComponent,
+    FormRoomErrorMessageComponent,
   ],
   imports: [
     BrowserModule,
