@@ -33,6 +33,8 @@ Essa aplicação necessita da API de Salas de Reuniões, disponível em https://
 
 [ ✔ ] Atualizar dados de salas
 
+[ ⚠ ] Validação de dados inseridos
+
 ## Imagens da utilização da aplicação
 
 Criação de uma nova sala:
@@ -46,6 +48,3 @@ Visualizando detalhes de uma sala:
 Lista de salas disponíveis:
 
 ![image](https://user-images.githubusercontent.com/55285816/129819602-6ec45d25-8352-4649-9037-869c67f973ca.png)
-
-
-
