@@ -1,4 +1,4 @@
-# ClientSalaReuniao
+# client-sala-reuniao
 
 Projeto criado com [Angular 12](https://github.com/angular/) para consumir a API [dio-saladereuniao](https://github.com/flwedu/dio-saladereuniao).
 
