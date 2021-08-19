@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { RoomService } from 'src/app/core/service/room.service';
+import { ValidationsService } from 'src/app/core/service/validations.service';
 import { Room } from '../../model/room';
 
 @Component({
@@ -13,9 +14,9 @@ export class FormRoomComponent implements OnInit {
   @Output()
   submitEventEmitter: EventEmitter<Room> = new EventEmitter();
 
-  id: any;
+  id: number;
   room: Room = new Room();
-  roomForm!: FormGroup;
+  roomForm: FormGroup;
   formReadyToShow = false;
 
   constructor(
@@ -58,23 +59,21 @@ export class FormRoomComponent implements OnInit {
         room.date,
         [
           Validators.required,
-          Validators.pattern(
-            '^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)d{4}$/i'
-          ),
+          ValidationsService.datePatternValidator,
         ],
       ],
       startHour: [
         room.startHour,
         [
           Validators.required,
-          Validators.pattern('/^([01]\d|2[0-3]):([0-5]\d)$/'),
+          ValidationsService.hourPatternValidator,
         ],
       ],
       endHour: [
         room.endHour,
         [
           Validators.required,
-          Validators.pattern('/^([01]\d|2[0-3]):([0-5]\d)$/'),
+          ValidationsService.hourPatternValidator,
         ],
       ],
       isActive: [room.isActive],
