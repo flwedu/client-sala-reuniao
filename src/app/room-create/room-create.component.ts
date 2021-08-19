@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RoomService } from '../core/service/room.service';
 import { Room } from '../shared/model/room';
@@ -10,9 +9,10 @@ import { Room } from '../shared/model/room';
   styleUrls: ['./room-create.component.css'],
 })
 export class RoomCreateComponent implements OnInit {
+
   submitted = false;
 
-  constructor(private roomService: RoomService, private router: Router) {}
+  constructor(private roomService: RoomService, private router: Router) { }
 
   ngOnInit(): void {
     this.newRoom();
