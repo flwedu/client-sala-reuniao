@@ -9,7 +9,7 @@ import { Room } from 'src/app/shared/model/room';
 export class RoomService {
   baseURL = 'http://localhost:8080/api/v1/rooms';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   listAll(): Observable<Room[]> {
     return this.httpClient.get<Room[]>(this.baseURL);
