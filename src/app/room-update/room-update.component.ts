@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoomService } from '../core/service/room.service';
-import { RoomListComponent } from '../room-list/room-list.component';
 import { Room } from '../shared/model/room';
 
 @Component({
@@ -10,7 +9,6 @@ import { Room } from '../shared/model/room';
   styleUrls: ['./room-update.component.css'],
 })
 export class RoomUpdateComponent implements OnInit {
-
   submitted = false;
   idFromRouter: number;
 
@@ -18,19 +16,21 @@ export class RoomUpdateComponent implements OnInit {
     private roomService: RoomService,
     private router: Router,
     private activedRoute: ActivatedRoute
-  ) {
+  ) { }
+
+  ngOnInit(): void {
     this.idFromRouter = this.activedRoute.snapshot.params['id'];
   }
 
-  ngOnInit(): void { }
-
   updateRoom(roomToSave: Room) {
-    this.roomService.update(this.idFromRouter, roomToSave).subscribe(
-      () => {
-        this.submitted = true
-      }
-
-    );
+    this.roomService.update(this.idFromRouter, roomToSave).subscribe({
+      next: (savedRoom) => {
+        console.log(roomToSave);
+        console.log(savedRoom);
+        this.submitted = true;
+      },
+      error: (err) => console.error(err),
+    });
 
     this.goToList();
   }
