@@ -15,7 +15,6 @@ export class FormRoomComponent implements OnInit {
   submitEventEmitter: EventEmitter<Room> = new EventEmitter();
 
   id: number;
-  room: Room;
   roomForm: FormGroup;
   formReadyToShow = false;
 
@@ -26,30 +25,36 @@ export class FormRoomComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.activedRoute.snapshot.params['id'] || -1;
+    this.id = this.activedRoute.snapshot.params['id'] || null;
     this.loadDataOfRoom();
   }
 
   loadDataOfRoom() {
-    this.roomService.findById(this.id).subscribe({
-      next: (result) => {
-        this.createForm(result);
-        this.formReadyToShow = true;
-      },
-      error: () => {
-        this.createForm(new Room());
-        this.formReadyToShow = true;
-      },
-    });
+    if (this.id) {
+      this.roomService.findById(this.id).subscribe({
+        next: (result) => {
+          this.createForm(result);
+        },
+        error: () => {
+          this.createEmptyForm();
+        },
+      });
+    }
+    else
+      this.createEmptyForm();
   }
 
   onSubmit() {
-    this.room = this.roomForm.getRawValue() as Room;
-    this.submitEventEmitter.emit(this.room);
+    this.submitEventEmitter.emit(this.roomForm.getRawValue() as Room);
   }
 
   getFormControl(controlName: string) {
     return this.roomForm.get(controlName);
+  }
+
+  private createEmptyForm() {
+    this.createForm(new Room());
+    this.formReadyToShow = true;
   }
 
   private createForm(room: Room) {
@@ -78,5 +83,6 @@ export class FormRoomComponent implements OnInit {
       ],
       isActive: [room.isActive],
     });
+    this.formReadyToShow = true;
   }
 }
