@@ -15,7 +15,7 @@ export class FormRoomComponent implements OnInit {
   submitEventEmitter: EventEmitter<Room> = new EventEmitter();
 
   id: number;
-  room: Room = new Room();
+  room: Room;
   roomForm: FormGroup;
   formReadyToShow = false;
 
