@@ -10,13 +10,13 @@ import { Room } from '../shared/model/room';
 })
 export class RoomDetailsComponent implements OnInit {
   id: any;
-  room = new Room();
+  room: Room;
 
   constructor(
     private roomService: RoomService,
     private activeRouter: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.id = this.activeRouter.snapshot.params['id'];

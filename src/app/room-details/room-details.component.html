@@ -1,31 +1,42 @@
 <h3>Create a new Room</h3>
-<section>
-  <div class="form-group">
-    <label for="name">Room name:</label>
-    <input type="text" class="form-control" readonly [value]="room.name" />
-  </div>
+<div *ngIf="room; else showLoadingMessage">
+  <section>
+    <div class="form-group">
+      <label for="name">Room name:</label>
+      <input type="text" class="form-control" readonly [value]="room.name" />
+    </div>
 
-  <div class="form-group">
-    <label for="name">Date:</label>
-    <input type="text" class="form-control" readonly [value]="room.date" />
-  </div>
+    <div class="form-group">
+      <label for="name">Date:</label>
+      <input type="text" class="form-control" readonly [value]="room.date" />
+    </div>
 
-  <div class="form-group">
-    <label for="name">Start Hour:</label>
-    <input type="text" class="form-control" readonly [value]="room.startHour" />
-  </div>
+    <div class="form-group">
+      <label for="name">Start Hour:</label>
+      <input
+        type="text"
+        class="form-control"
+        readonly
+        [value]="room.startHour"
+      />
+    </div>
 
-  <div class="form-group">
-    <label for="name">End Hour:</label>
-    <input type="text" class="form-control" readonly [value]="room.endHour" />
-  </div>
+    <div class="form-group">
+      <label for="name">End Hour:</label>
+      <input type="text" class="form-control" readonly [value]="room.endHour" />
+    </div>
 
-  <div class="buttons">
-    <button class="btn btn-outline-warning" (click)="goToUpdate()">
-      Update Room
-    </button>
-    <button class="btn btn-outline-secondary" (click)="goToList()">
-      Back to List
-    </button>
-  </div>
-</section>
+    <div class="buttons">
+      <button class="btn btn-outline-warning" (click)="goToUpdate()">
+        Update Room
+      </button>
+      <button class="btn btn-outline-secondary" (click)="goToList()">
+        Back to List
+      </button>
+    </div>
+  </section>
+</div>
+
+<ng-template #showLoadingMessage>
+  <app-loading-message></app-loading-message>
+</ng-template>
