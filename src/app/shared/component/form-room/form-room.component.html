@@ -1,4 +1,4 @@
-<div *ngIf="formReadyToShow">
+<div *ngIf="formReadyToShow; else showLoadingMessage">
   <form [formGroup]="roomForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Room name:</label>
@@ -67,3 +67,13 @@
     </div>
   </form>
 </div>
+<ng-template #showLoadingMessage>
+  <div class="d-flex align-items-center">
+    <strong>Loading data...</strong>
+    <div
+      class="spinner-border ms-auto text-warning"
+      role="status"
+      aria-hidden="true"
+    ></div>
+  </div>
+</ng-template>
