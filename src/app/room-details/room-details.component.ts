@@ -28,7 +28,10 @@ export class RoomDetailsComponent implements OnInit {
       next: (result) => {
         this.room = result;
       },
-      error: (err) => console.error(err),
+      error: (err) => {
+        this.router.navigate(['404'])
+        console.error(err)
+      },
     });
   }
 
