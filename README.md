@@ -33,7 +33,7 @@ Essa aplicação necessita da API de Salas de Reuniões, disponível em https://
 
 [ ✔ ] Atualizar dados de salas
 
-[ ⚠ ] Validação de dados inseridos
+[ ✔ ] Validação de dados inseridos
 
 ## Imagens da utilização da aplicação
 
