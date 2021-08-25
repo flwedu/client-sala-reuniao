@@ -13,7 +13,7 @@ export class FormRoomErrorMessageComponent {
 
   constructor() { }
 
-  get errorMessage(): any {
+  get errorMessage(): string {
 
     for (let propertyName in this.control.errors) {
       if (
