@@ -16,6 +16,7 @@ import { FooterComponent } from './shared/component/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormRoomComponent } from './shared/component/form-room/form-room.component';
 import { FormRoomErrorMessageComponent } from './shared/component/form-room-error-message/form-room-error-message.component';
+import { LoadingMessageComponent } from './shared/component/loading-message/loading-message.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormRoomErrorMessageComponent } from './shared/component/form-room-erro
     FooterComponent,
     FormRoomComponent,
     FormRoomErrorMessageComponent,
+    LoadingMessageComponent,
   ],
   imports: [
     BrowserModule,
