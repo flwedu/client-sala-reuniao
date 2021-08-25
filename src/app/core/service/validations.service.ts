@@ -25,7 +25,7 @@ export class ValidationsService {
     if (!control.value) {
       return null;
     }
-    const regex = new RegExp('/^([01]\d|2[0-3]):([0-5]\d)$/');
+    const regex = new RegExp('([0-1][0-9]|2[0-3]):[0-5][0-9]');
     return regex.test(control.value) ? null : { invalidHour: true };
 
   }
@@ -35,7 +35,7 @@ export class ValidationsService {
     if (!control.value) {
       return null;
     }
-    const regex = new RegExp('^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$');
+    const regex = new RegExp('^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$');
     return regex.test(control.value) ? null : { invalidDate: true };
 
   }
