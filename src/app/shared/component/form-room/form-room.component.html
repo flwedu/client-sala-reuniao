@@ -9,6 +9,9 @@
         name="name"
         formControlName="name"
       />
+      <app-form-room-error-message
+        [control]="getFormControl('name')"
+      ></app-form-room-error-message>
     </div>
 
     <div class="form-group">
@@ -20,6 +23,9 @@
         name="date"
         formControlName="date"
       />
+      <app-form-room-error-message
+        [control]="getFormControl('date')"
+      ></app-form-room-error-message>
     </div>
 
     <div class="form-group">
@@ -31,6 +37,9 @@
         name="startHour"
         formControlName="startHour"
       />
+      <app-form-room-error-message
+        [control]="getFormControl('startHour')"
+      ></app-form-room-error-message>
     </div>
 
     <div class="form-group">
@@ -42,6 +51,9 @@
         name="endHour"
         formControlName="endHour"
       />
+      <app-form-room-error-message
+        [control]="getFormControl('endHour')"
+      ></app-form-room-error-message>
     </div>
 
     <div class="buttons">
