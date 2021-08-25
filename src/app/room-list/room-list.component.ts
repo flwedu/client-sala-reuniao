@@ -10,16 +10,16 @@ import { Room } from '../shared/model/room';
   styleUrls: ['./room-list.component.css'],
 })
 export class RoomListComponent implements OnInit {
-  roomList?: Observable<Room[]>;
+  roomList$: Observable<Room[]>;
 
-  constructor(private roomService: RoomService, private router: Router) {}
+  constructor(private roomService: RoomService, private router: Router) { }
 
   ngOnInit(): void {
     this.reloadData();
   }
 
   reloadData() {
-    this.roomList = this.roomService.listAll();
+    this.roomList$ = this.roomService.listAll();
   }
 
   handleDeleteRoom(id: any) {
