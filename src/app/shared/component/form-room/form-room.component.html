@@ -57,7 +57,13 @@
     </div>
 
     <div class="buttons">
-      <button type="submit" class="btn btn-outline-primary">Save</button>
+      <button
+        type="submit"
+        [disabled]="!roomForm.valid"
+        class="btn btn-outline-primary"
+      >
+        Save
+      </button>
     </div>
   </form>
 </div>
