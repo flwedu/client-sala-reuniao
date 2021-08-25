@@ -1,16 +1,30 @@
 <h2>List of Rooms</h2>
 
-<div class="container">
-  <div class="row">
-    <div
-      class="card"
-      style="max-width: 18rem"
-      *ngFor="let room of roomList$ | async"
-    >
-      <app-room-card
-        [roomBeingShown]="room"
-        (deleteComponent)="handleDeleteRoom(room.id)"
-      ></app-room-card>
+<div *ngIf="roomList$ | async; else showLoadingMessage">
+  <div class="container">
+    <div class="row">
+      <div
+        class="card"
+        style="max-width: 18rem"
+        *ngFor="let room of roomList$ | async"
+      >
+        <app-room-card
+          [roomBeingShown]="room"
+          (deleteComponent)="handleDeleteRoom(room.id)"
+        ></app-room-card>
+      </div>
     </div>
   </div>
 </div>
+
+<ng-template #showLoadingMessage>
+  <div class="text-center">
+    <strong>Loading data... Please wait</strong>
+    <br />
+    <div
+      class="spinner-border ms-auto text-warning"
+      role="status"
+      aria-hidden="true"
+    ></div>
+  </div>
+</ng-template>
