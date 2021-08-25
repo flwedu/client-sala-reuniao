@@ -1,4 +1,4 @@
-<div *ngIf="formReadyToShow; else showLoadingMessage">
+<div *ngIf="room && roomForm; else showLoadingMessage">
   <form [formGroup]="roomForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Room name:</label>
@@ -67,6 +67,8 @@
     </div>
   </form>
 </div>
+
+<!-- TODO No results message -->
 
 <ng-template #showLoadingMessage>
   <app-loading-message></app-loading-message>

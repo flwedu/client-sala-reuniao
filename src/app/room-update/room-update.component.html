@@ -1,6 +1,14 @@
 <h3>Update Room</h3>
 <section>
   <div [hidden]="submitted" style="width: 400px">
-    <app-form-room (submitEventEmitter)="updateRoom($event)"></app-form-room>
+    <app-form-room
+      *ngIf="room; else showLoadingMessage"
+      [room]="room"
+      (submitEventEmitter)="updateRoom($event)"
+    ></app-form-room>
   </div>
 </section>
+
+<ng-template #showLoadingMessage>
+  <app-loading-message></app-loading-message>
+</ng-template>

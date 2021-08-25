@@ -1,7 +1,10 @@
 <h3>Create a new Room</h3>
 <section>
   <div [hidden]="submitted" style="width: 400px">
-    <app-form-room (submitEventEmitter)="saveRoom($event)"></app-form-room>
+    <app-form-room
+      [room]="createNewRoom()"
+      (submitEventEmitter)="saveRoom($event)"
+    ></app-form-room>
   </div>
   <div class="buttons">
     <div [hidden]="!submitted">

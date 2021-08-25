@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { RoomService } from '../core/service/room.service';
 import { Room } from '../shared/model/room';
 
@@ -9,6 +10,8 @@ import { Room } from '../shared/model/room';
   styleUrls: ['./room-update.component.css'],
 })
 export class RoomUpdateComponent implements OnInit {
+
+  room: Room;
   submitted = false;
   idFromRouter: number;
 
@@ -20,19 +23,28 @@ export class RoomUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.idFromRouter = this.activedRoute.snapshot.params['id'];
+    this.getDataOfRoom(this.idFromRouter);
   }
 
   updateRoom(roomToSave: Room) {
     this.roomService.update(this.idFromRouter, roomToSave).subscribe({
-      next: (savedRoom) => {
-        console.log(roomToSave);
-        console.log(savedRoom);
+      next: () => {
         this.submitted = true;
       },
       error: (err) => console.error(err),
     });
 
     this.goToList();
+  }
+
+  getDataOfRoom(id: number) {
+    this.roomService.findById(id).subscribe({
+      next: (roomResponse) => { this.room = roomResponse },
+      error: (err) => {
+        console.error(err)
+        this.router.navigate(['404'])
+      }
+    })
   }
 
   goToList() {
