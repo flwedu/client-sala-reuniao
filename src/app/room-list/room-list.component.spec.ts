@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppModule } from '../app.module';
 
 import { RoomListComponent } from './room-list.component';
 
@@ -8,9 +9,10 @@ describe('RoomListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RoomListComponent ]
+      imports: [AppModule],
+      declarations: [RoomListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
