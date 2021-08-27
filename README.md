@@ -10,12 +10,23 @@ Projeto criado com [Angular 12](https://github.com/angular/) para consumir a API
 - CSS
 - Bootstrap 5
 - Material Icons
+- Jasmine
+- Karma
 
 ## Rodando a aplicação 🚀
 
-Basta acesar a pasta raiz do projeto e rodar `ng serve` para iniciar a aplicação.
+Basta acesar a pasta raiz do projeto e executar um `ng serve` para iniciar a aplicação.
+
+![image](https://user-images.githubusercontent.com/55285816/131054106-06e4f3c5-4da0-4be9-ade0-92eae1b259ec.png)
 
 Após isso, basta navegar para `http://localhost:4200/`.
+
+## Verificanto testes unitários
+
+Para rodar os testes unitários, basta executar `ng test`. Esse comando irá executar os testes e abrir uma página no browser com os resultados.
+
+![image](https://user-images.githubusercontent.com/55285816/131053965-174e4167-3900-4198-bed4-33015e87bfbe.png)
+
 
 ### Observações 📢
 
