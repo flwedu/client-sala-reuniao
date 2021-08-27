@@ -13,6 +13,10 @@ Projeto criado com [Angular 12](https://github.com/angular/) para consumir a API
 - Jasmine
 - Karma
 
+## Observações 📢
+
+Essa aplicação necessita da API de Salas de Reuniões, disponível em https://github.com/flwedu/dio-saladereuniao.
+
 ## Rodando a aplicação 🚀
 
 Basta acesar a pasta raiz do projeto e executar um `ng serve` para iniciar a aplicação.
@@ -21,16 +25,12 @@ Basta acesar a pasta raiz do projeto e executar um `ng serve` para iniciar a apl
 
 Após isso, basta navegar para `http://localhost:4200/`.
 
-## Verificanto testes unitários
+## Verificanto testes unitários 🧪
 
 Para rodar os testes unitários, basta executar `ng test`. Esse comando irá executar os testes e abrir uma página no browser com os resultados.
 
 ![image](https://user-images.githubusercontent.com/55285816/131053965-174e4167-3900-4198-bed4-33015e87bfbe.png)
 
-
-### Observações 📢
-
-Essa aplicação necessita da API de Salas de Reuniões, disponível em https://github.com/flwedu/dio-saladereuniao.
 
 ## Recursos
 
