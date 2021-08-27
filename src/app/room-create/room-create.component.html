@@ -8,12 +8,20 @@
   </div>
   <div class="buttons">
     <div [hidden]="!submitted">
-      <button class="btn btn-outline-secondary" (click)="newRoom()">
+      <button
+        class="btn btn-outline-secondary"
+        id="button-new-room"
+        (click)="newRoom()"
+      >
         Add another Room
       </button>
     </div>
     <div>
-      <button class="btn btn-outline-secondary" (click)="gotoListPage()">
+      <button
+        class="btn btn-outline-secondary"
+        id="button-goto-list"
+        (click)="gotoListPage()"
+      >
         Back to List
       </button>
     </div>
