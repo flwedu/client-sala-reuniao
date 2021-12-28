@@ -10,6 +10,7 @@ import { RoomEvent } from 'src/app/shared/model/roomEvent';
 export class RoomEventService {
 
   baseURL = 'http://localhost:8080/api/v1/events';
+  roomURL = 'http://localhost:8080/api/v1/rooms';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,7 +23,7 @@ export class RoomEventService {
   }
 
   findByRoomId(roomId: number): Observable<RoomEvent[]> {
-    return this.httpClient.get<RoomEvent[]>(`${this.baseURL}/rooms/${roomId}/events`)
+    return this.httpClient.get<RoomEvent[]>(`${this.roomURL}/${roomId}/events`)
   }
 
   // save(roomEvent: RoomEvent): Observable<RoomEvent> {
