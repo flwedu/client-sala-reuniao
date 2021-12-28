@@ -41,7 +41,7 @@ import { Error404Component } from './error404/error404.component';
     MatIconModule,
     ReactiveFormsModule,
   ],
-  providers: [RoomService],
+  providers: [RoomService, RoomEventService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
