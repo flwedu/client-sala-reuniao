@@ -3,9 +3,6 @@
 </div>
 <div class="card-body">
   <h5 class="card-title">{{ roomBeingShown.name }}</h5>
-  <p class="card-text">Date: {{ roomBeingShown.date }}</p>
-  <p class="card-text">Start Hour: {{ roomBeingShown.startHour }}</p>
-  <p class="card-text">End Hour: {{ roomBeingShown.endHour }}</p>
   <div class="buttons">
     <button
       (click)="goToRoomDetails(roomBeingShown.id)"

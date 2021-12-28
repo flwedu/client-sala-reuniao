@@ -13,48 +13,9 @@
         [control]="getFormControl('name')"
       ></app-form-room-error-message>
     </div>
-
-    <div class="form-group">
-      <label for="date">Date:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="date"
-        name="date"
-        formControlName="date"
-      />
-      <app-form-room-error-message
-        [control]="getFormControl('date')"
-      ></app-form-room-error-message>
-    </div>
-
-    <div class="form-group">
-      <label for="startHour">Start Hour:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="startHour"
-        name="startHour"
-        formControlName="startHour"
-      />
-      <app-form-room-error-message
-        [control]="getFormControl('startHour')"
-      ></app-form-room-error-message>
-    </div>
-
-    <div class="form-group">
-      <label for="endHour">End Hour:</label>
-      <input
-        type="text"
-        class="form-control"
-        id="endHour"
-        name="endHour"
-        formControlName="endHour"
-      />
-      <app-form-room-error-message
-        [control]="getFormControl('endHour')"
-      ></app-form-room-error-message>
-    </div>
+    <app-form-room-error-message
+      [control]="getFormControl('endHour')"
+    ></app-form-room-error-message>
 
     <div class="buttons">
       <button
